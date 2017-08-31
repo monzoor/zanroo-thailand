@@ -11,15 +11,17 @@ class UserPole extends Component{
       this.state = {
           poleStates
       };
-
+      // create click event
       this.createPole = this.createPole.bind(this);
   }
 
+  // On click create pills
   createPole(e) {
     e.stopPropagation();
     const states = this.state.poleStates;
     const currentMode = e.currentTarget.getAttribute("data-index");
-    states[currentMode].poleCount = states[currentMode].poleCount + 1
+    // increse pill count value by 1
+    states[currentMode].poleCount = states[currentMode].poleCount + 1;
     this.setState({
       states: states
     })
@@ -28,10 +30,12 @@ class UserPole extends Component{
   render () {
     // render poles from data
     const renderPoleItmes = this.props.poles.map((pole, index) => {
+      // create pills from the default counter
       const pills = [];
       for (var i = 0; i < pole.poleCount; i++) {
         pills.push(<div className="badge badge-pill badge--light-gray mrs" key={i}>{pole.poleName}</div>)
       }
+      // render poles
       return (
         <Row className="mbs" key={index}>
           <Col md={3} sm={4} className="col-12 tag--name prn pts">
