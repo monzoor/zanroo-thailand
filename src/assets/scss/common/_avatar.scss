@@ -1,0 +1,36 @@
+.avatar {
+  overflow: hidden;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  @include border-radius(50%);
+
+  &__img {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &--sm {
+    height: 40px;
+    width: 40px;
+  }
+
+  &__social {
+    overflow: inherit;
+    height: 35px;
+    width: 35px;
+    &--facebook {
+      color: $facebook;
+      font-size: 40px;
+      left: -$spacing-md;
+      top: -4px;
+      z-index: 0;
+      position: absolute;
+      line-height: 0;
+    }
+  }
+}

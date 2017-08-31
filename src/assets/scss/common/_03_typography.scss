@@ -1,0 +1,44 @@
+/**********************
+*                     *
+*   Typography       *
+*                     *
+***********************/
+
+
+.text {
+  // color
+  &--fb {
+    color: $facebook;
+  }
+  &--p_headline {
+    color: $paragrap-headline;
+  }
+  &--description, &--light-gray {
+    color: $description;
+  }
+  &--red {
+    color: $red;
+  }
+  &--green {
+    color: $green;
+  }
+  &--poker {
+    color: #dcdbdb
+  }
+
+  // size
+  &--sm {
+    font-size: 12px;
+  }
+  &--md {
+    font-size: 16px;
+  }
+  &--lg {
+    font-size: 20px;
+  }
+
+  //
+  &--description {
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,68 @@
+/**********************
+*                     *
+*   Scaffolding       *
+*                     *
+***********************/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include gradient-y($start-color: $gradient1, $end-color: $gradient2);
+  min-height: 100vh;
+  position: relative;
+  padding-top: 20px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* ul, li {
+  margin: 0;
+  padding: 0;
+}
+* li {
+  list-style: none;
+}
+
+// text
+p {
+  margin-bottom: $spacing-sm;
+}
+
+// container
+@include media-breakpoint-up(xl) {
+  .container-fluid {
+    width: $xl-width;
+  }
+}
+.card {
+  padding: 15px 15px 0;
+  border: 2px solid $boder;
+  @include border-radius($round-corner);
+}
+
+//
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+// devider
+.devider {
+  border: 1px solid $devider;
+  height: 1px;
+  margin-top: 14px;
+}
+
+.bg {
+  &--gray {
+    background-color: $gradient1;
+  }
+}
+
+// TODO: delete
+.bd {
+  border: 1px solid red;
+}

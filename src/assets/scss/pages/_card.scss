@@ -1,0 +1,68 @@
+#userInfo {
+  .btn {
+    padding: 0;
+  }
+  .icon-menu {
+    &:before{
+      margin-left: 18px;
+      width: 1px;
+      font-size: 20px;
+      color: $semi-light-gray;
+    }
+  }
+}
+
+#userActivity {
+  ul {
+    >li {
+      float: left;
+      margin-right: 28px;
+    }
+  }
+  span {
+    vertical-align: initial;
+    padding: 0 0 0 12px;
+  }
+  i {
+    cursor: pointer;
+    font-size: 20px;
+    &:before{
+      margin: 0;
+      width: auto;
+    }
+    &:hover {
+      color: $facebook;
+    }
+  }
+}
+
+  #userPole {
+    .colon {
+      margin-top: 2px;
+    }
+    .tag {
+      &--name {
+        padding-top: 2px;
+      }
+    }
+  }
+
+  #userOptions {
+    ul {
+      >li {
+        float: left;
+        padding: 0 $spacing-md;
+        font-size: 20px;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          float: right;
+          padding-right: 0;
+        }
+        &.border{
+          border-left: 2px solid #d9d9d9;
+        }
+      }
+    }
+  }

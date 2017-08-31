@@ -1,0 +1,10 @@
+.badge {
+  &--light-gray {
+    background-color: $pill--light-gray;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: $light-gray;
+    margin-top: 6px;
+  }
+}
