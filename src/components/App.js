@@ -7,11 +7,17 @@ import UserActivity from './userCard/userActivity';
 import UserPole from './userCard/userPole';
 import UserOptions from './userCard/userOptions';
 
+import poleData from '../demoData/pole.json';
+
 class App extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      poleData
+    }
+  }
   render() {
-
     return (
-
       <Grid fluid={true}>
         <Row>
           <Col md={12}>
@@ -19,7 +25,7 @@ class App extends Component {
                 <UserInfo/>
                 <UserMeta/>
                 <UserActivity/>
-                <UserPole/>
+                <UserPole poles={this.state.poleData}/>
                 <UserOptions/>
             </div>
           </Col>

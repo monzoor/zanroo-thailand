@@ -1,69 +1,58 @@
 import React, { Component}  from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 
-const poles = [
-  {
-    smile: {
-      poleName: "Tom N Toms",
-      pillName: "Tom N Toms",
-      poleCount: 1
-    }
-  },
-  {
-    poker: {
-      poleName: "Tom N Toms",
-      pillName: "Tom N Toms",
-      poleCount: 2
-    }
-  },
-  {
-    sad: {
-      poleName: "Tom N Toms",
-      pillName: "Tom N Toms",
-      poleCount: 2
-    }
-  }
-]
 
 class UserPole extends Component{
+
+  constructor(props) {
+      super(props);
+
+      var poleStates = props.poles;
+      this.state = {
+          poleStates
+      };
+
+      this.createPole = this.createPole.bind(this);
+  }
+
+  createPole(e) {
+    e.stopPropagation();
+    const states = this.state.poleStates;
+    const currentMode = e.currentTarget.getAttribute("data-index");
+    states[currentMode].poleCount = states[currentMode].poleCount + 1
+    this.setState({
+      states: states
+    })
+  }
+
   render () {
+    // render poles from data
+    const renderPoleItmes = this.props.poles.map((pole, index) => {
+      const pills = [];
+      for (var i = 0; i < pole.poleCount; i++) {
+        pills.push(<span className="badge badge-pill badge--light-gray mrs" key={i}>{pole.poleName}</span>)
+      }
+      return (
+        <Row className="mbs" key={index}>
+          <Col md={3} sm={4} className="col-12 tag--name prn pts">
+            <i className={`icon-${pole.mode} text--${pole.mode} text--lg iman`}></i>
+            <span className="plm">{pole.poleName}</span>
+            <span className="colon float-sm-right float-md-right">:</span>
+          </Col>
+          <Col md={9} sm={8} className="col-12">
+            {pills}
+            <Button className="btn btn-link pan" onClick={this.createPole} data-index={index}>
+              <i className="icon-plus text--lg align-middle text--light-gray"></i>
+            </Button>
+          </Col>
+        </Row>
+      );
+    });
+
     return (
       <Row id="userPole">
         <Col md={12}>
-          <Row className="mbs">
-            <Col md={3} sm={4} className="col-12 tag--name prn pts">
-              <i className="icon-smile text--green text--lg iman"></i>
-              <span className="plm">Tom N Toms</span>
-              <span className="colon float-sm-right float-md-right">:</span>
-            </Col>
-            <Col md={9} sm={8} className="col-12">
-              <span className="badge badge-pill badge--light-gray mrs">Tom N Toms</span>
-              <i className="icon-plus text--lg align-middle text--light-gray"></i>
-            </Col>
-          </Row>
-          <Row className="mbs">
-            <Col md={3} sm={4} className="col-12 tag--name prn pts">
-              <i className="icon-poker text--poker text--lg iman"></i>
-              <span className="plm">Starbuck</span>
-              <span className="colon float-sm-right float-md-right">:</span>
-            </Col>
-            <Col md={9} sm={8} className="col-12">
-              <span className="badge badge-pill badge--light-gray mrs">starbuck</span>
-              <span className="badge badge-pill badge--light-gray mrs">starbuck</span>
-              <i className="icon-plus text--lg align-middle text--light-gray"></i>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={3} sm={4} className="col-12 tag--name prn pts">
-              <i className="icon-sad text--red text--lg iman"></i>
-              <span className="plm">Toms coffee</span>
-              <span className="colon float-sm-right float-md-right">:</span>
-            </Col>
-            <Col md={9} sm={8} className="col-12">
-              <span className="badge badge-pill badge--light-gray mrs">Tom N</span>
-              <i className="icon-plus text--lg align-middle text--light-gray"></i>
-            </Col>
-          </Row>
+          {renderPoleItmes}
         </Col>
       </Row>
     )

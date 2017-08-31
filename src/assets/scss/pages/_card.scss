@@ -36,16 +36,24 @@
   }
 }
 
-  #userPole {
-    .colon {
-      margin-top: 2px;
-    }
-    .tag {
-      &--name {
-        padding-top: 2px;
+#userPole {
+  .btn {
+    cursor: pointer;
+    &:hover {
+      i {
+        color: $green;
       }
     }
   }
+  .colon {
+    margin-top: 2px;
+  }
+  .tag {
+    &--name {
+      padding-top: 2px;
+    }
+  }
+}
 
   #userOptions {
     ul {
