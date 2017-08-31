@@ -18,14 +18,11 @@ class UserInfo extends Component{
             <i className="icon-facebook-circled avatar__social--facebook"></i>
           </div>
         </Col>
-        <Col className="col col-lg-10">
+        <Col md={10} sm={9} className="col-auto info">
           <p className="text--fb mbn"><b>Oil Wanichpoonsuk</b></p>
           <p className="text--sm text--description mbn"><i className="icon-earth"></i>Public. 15 May 2017 9:00AM</p>
         </Col>
-
-        <Col className="col-auto mr-auto">
-          <Button bsStyle="link"><i className="icon-menu"></i></Button>
-        </Col>
+        <Button bsStyle="link"><i className="icon-menu"></i></Button>
       </Row>
     )
   }

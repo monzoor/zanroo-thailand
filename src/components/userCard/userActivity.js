@@ -4,8 +4,8 @@ import { Row, Col } from 'react-bootstrap';
 class UserActivity extends Component{
   render () {
     return (
-      <Row id="userActivity" className="justify-content-md-center mbm">
-        <Col md={5}>
+      <Row id="userActivity" className="mbm gutters">
+        <Col className="col-auto plm">
           <Row className="no-gutters">
             <ul>
               <li>
@@ -23,7 +23,8 @@ class UserActivity extends Component{
             </ul>
           </Row>
         </Col>
-        <Col md={7} className="no-gutter">
+        <div class="w-100"></div>
+        <Col className="col">
           <div className="devider"></div>
         </Col>
       </Row>

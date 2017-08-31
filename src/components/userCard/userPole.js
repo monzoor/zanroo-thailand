@@ -27,10 +27,6 @@ class UserPole extends Component{
 
   render () {
     // render poles from data
-    console.log(this.props);
-    if (!this.props.poles) {
-      return <div></div>
-    }
     const renderPoleItmes = this.props.poles.map((pole, index) => {
       const pills = [];
       for (var i = 0; i < pole.poleCount; i++) {

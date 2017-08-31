@@ -1,22 +1,40 @@
 #userInfo {
+  position: relative;
   .btn {
     padding: 0;
   }
+  button {
+    position: absolute;;
+    right: 0;
+    top: 0;
+  }
   .icon-menu {
     &:before{
-      margin-left: 18px;
-      width: 1px;
       font-size: 20px;
       color: $semi-light-gray;
+      width: 5px;
     }
   }
 }
 
+@media (max-width: 360px) {
+  #userInfo {
+    .info {
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: $spacing-md;
+    }
+  }
+}
 #userActivity {
   ul {
+    padding-left: 4px;
     >li {
       float: left;
       margin-right: 28px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
   span {
@@ -24,11 +42,22 @@
     padding: 0 0 0 12px;
   }
   i {
-    cursor: pointer;
     font-size: 20px;
     &:before{
       margin: 0;
       width: auto;
+    }
+  }
+}
+@media (max-width: 360px) {
+  #userActivity {
+    ul {
+      >li {
+        margin-right: 15px;
+      }
+       i {
+         font-size: 18px
+       }
     }
   }
 }
@@ -62,7 +91,7 @@
         padding-left: 0;
       }
       &:last-child {
-        float: right;
+        // float: right;
         padding-right: 0;
       }
       &.border{
