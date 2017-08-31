@@ -136,7 +136,7 @@ module.exports = {
       {
         exclude: [
           /\.html$/,
-          /\.(js|jsx|json)$/,
+          /\.(js|jsx)$/,
           /\.css$/,
           /\.scss$/,
           /\.json$/,
@@ -161,13 +161,6 @@ module.exports = {
         loader: require.resolve('file-loader'),
         options: {
           name: 'static/font/[name].[hash:8].[ext]',
-        },
-      },
-      {
-        test: /\.(json)$/,
-        loader: require.resolve('file-loader'),
-        options: {
-          name: 'static/demoData/[name].[hash:8].[ext]',
         },
       },
       // "url" loader works just like "file" loader but it also embeds

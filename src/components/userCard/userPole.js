@@ -27,10 +27,14 @@ class UserPole extends Component{
 
   render () {
     // render poles from data
+    console.log(this.props);
+    if (!this.props.poles) {
+      return <div></div>
+    }
     const renderPoleItmes = this.props.poles.map((pole, index) => {
       const pills = [];
       for (var i = 0; i < pole.poleCount; i++) {
-        pills.push(<span className="badge badge-pill badge--light-gray mrs" key={i}>{pole.poleName}</span>)
+        pills.push(<div className="badge badge-pill badge--light-gray mrs" key={i}>{pole.poleName}</div>)
       }
       return (
         <Row className="mbs" key={index}>

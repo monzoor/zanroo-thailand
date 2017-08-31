@@ -30,9 +30,6 @@
       margin: 0;
       width: auto;
     }
-    &:hover {
-      color: $facebook;
-    }
   }
 }
 
@@ -55,22 +52,22 @@
   }
 }
 
-  #userOptions {
-    ul {
-      >li {
-        float: left;
-        padding: 0 $spacing-md;
-        font-size: 20px;
-        &:first-child {
-          padding-left: 0;
-        }
-        &:last-child {
-          float: right;
-          padding-right: 0;
-        }
-        &.border{
-          border-left: 2px solid #d9d9d9;
-        }
+#userOptions {
+  ul {
+    >li {
+      float: left;
+      padding: 0 $spacing-md;
+      font-size: 20px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        float: right;
+        padding-right: 0;
+      }
+      &.border{
+        border-left: 2px solid #d9d9d9;
       }
     }
   }
+}

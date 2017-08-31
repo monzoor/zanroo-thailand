@@ -1,4 +1,4 @@
-[
+const poleData = [
   {
     "mode": "smile",
     "poleName": "Tom N Toms",
@@ -18,3 +18,5 @@
     "poleCount": 1
   }
 ]
+
+export default poleData;

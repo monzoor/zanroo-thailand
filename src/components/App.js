@@ -7,7 +7,7 @@ import UserActivity from './userCard/userActivity';
 import UserPole from './userCard/userPole';
 import UserOptions from './userCard/userOptions';
 
-import poleData from '../demoData/pole.json';
+import poleData from './../demoData/pole';
 
 class App extends Component {
   constructor (props) {
